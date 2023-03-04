@@ -12,6 +12,9 @@
         android:theme="@style/Theme.MYVAULT"
         tools:targetApi="31">
         <activity
+            android:name=".SignUp"
+            android:exported="false" />
+        <activity
             android:name=".ImageView"
             android:exported="true">
             <intent-filter>
@@ -39,7 +42,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".login_page"
+            android:name="login_page"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
