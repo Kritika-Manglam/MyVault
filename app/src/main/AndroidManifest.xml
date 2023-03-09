@@ -11,11 +11,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.MYVAULT"
         tools:targetApi="31">
+
         <activity
-            android:name=".SignUp"
-            android:exported="false" />
-        <activity
-            android:name=".ImageView"
+            android:name=".SecondPage"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -23,6 +21,9 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity
+            android:name=".SignUpActivity"
+            android:exported="false" />
         <activity
             android:name=".PdfView"
             android:exported="true">
@@ -42,7 +43,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name="login_page"
+            android:name=".LoginPageActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
