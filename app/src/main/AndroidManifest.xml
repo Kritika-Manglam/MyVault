@@ -11,7 +11,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.MYVAULT"
         tools:targetApi="31">
-
+        <activity
+            android:name=".ImageUpload"
+            android:exported="false" />
         <activity
             android:name=".SecondPage"
             android:exported="true">
@@ -23,7 +25,7 @@
         </activity>
         <activity
             android:name=".SignUpActivity"
-            android:exported="false" />
+            android:exported="true" />
         <activity
             android:name=".PdfView"
             android:exported="true">

@@ -25,7 +25,7 @@ class LoginPageActivity : AppCompatActivity() {
         }
 
         binding.button.setOnClickListener {
-            val email = binding.UserName.text.toString()
+            val email = binding.UserName.toString()
             val pass = binding.passwordEnter.text.toString()
 
             if (email.isNotEmpty() && pass.isNotEmpty()) {

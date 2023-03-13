@@ -16,9 +16,8 @@ class SecondPage : AppCompatActivity() {
         tabLayout = findViewById(R.id.tabLayout)
         viewPager= findViewById(R.id.viewPager)
 
-        tabLayout.addTab(tabLayout.newTab().setText("Home"))
-        tabLayout.addTab(tabLayout.newTab().setText("Profile"))
-        tabLayout.addTab(tabLayout.newTab().setText("Settings"))
+        tabLayout.addTab(tabLayout.newTab().setText("My PDFs"))
+        tabLayout.addTab(tabLayout.newTab().setText("My Images"))
         //tabLayout.tabGravity = TableLayout.GRAVITY_FILL
 
         val adapter=MyAdapter(this,supportFragmentManager,tabLayout.tabCount)
@@ -34,4 +33,5 @@ class SecondPage : AppCompatActivity() {
         })
 
     }
+
 }
