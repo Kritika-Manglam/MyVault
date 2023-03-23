@@ -34,10 +34,10 @@ class SignUpActivity : AppCompatActivity() {
 
                     firebaseAuth.createUserWithEmailAndPassword(email, pass).addOnCompleteListener {
                         if (it.isSuccessful) {
-                            val intent = Intent(this, LoginPageActivity::class.java)
+                            val intent = Intent(this, SecondPage::class.java)
                             startActivity(intent)
                         } else {
-                            Toast.makeText(this, it.exception.toString(), Toast.LENGTH_SHORT).show()
+                            Toast.makeText(this, "password should be of minimum 6 letters", Toast.LENGTH_SHORT).show()
 
                         }
                     }
@@ -50,4 +50,5 @@ class SignUpActivity : AppCompatActivity() {
             }
         }
     }
+
 }

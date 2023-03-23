@@ -25,17 +25,17 @@ class LoginPageActivity : AppCompatActivity() {
         }
 
         binding.button.setOnClickListener {
-            val email = binding.UserName.toString()
+            val email = binding.emailEt.text.toString()
             val pass = binding.passwordEnter.text.toString()
 
             if (email.isNotEmpty() && pass.isNotEmpty()) {
 
                 firebaseAuth.signInWithEmailAndPassword(email, pass).addOnCompleteListener {
                     if (it.isSuccessful) {
-                        val intent = Intent(this, MainActivity::class.java)
+                        val intent = Intent(this, SecondPage::class.java)
                         startActivity(intent)
                     } else {
-                        Toast.makeText(this, it.exception.toString(), Toast.LENGTH_SHORT).show()
+                        Toast.makeText(this, "Create an account to continue", Toast.LENGTH_SHORT).show()
 
                     }
                 }
@@ -44,14 +44,13 @@ class LoginPageActivity : AppCompatActivity() {
 
             }
         }
-    }
+    }}
 
-    override fun onStart() {
-        super.onStart()
-
-        if(firebaseAuth.currentUser != null){
-            val intent = Intent(this, MainActivity::class.java)
-            startActivity(intent)
-        }
-    }
-}
+// override fun onStart() {
+// super.onStart()
+//
+// if(firebaseAuth.currentUser != null){
+// val intent = Intent(this, SecondPage::class.java)
+// startActivity(intent)
+// }
+// }

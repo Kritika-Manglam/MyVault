@@ -6,11 +6,11 @@ import androidx.fragment.app.FragmentPagerAdapter
 import com.example.myvault.Fragments.MyImages
 import com.example.myvault.Fragments.MyPDFs
 
-internal class MyAdapter (var context:Context,fm:FragmentManager,var totalTabs:Int):FragmentPagerAdapter(fm)
-{
-    override fun getItem(position:Int): Fragment {
+
+internal class MyAdapter (var context:Context,fm:FragmentManager,var totalTabs:Int,):FragmentPagerAdapter(fm) {
+    override fun getItem(position: Int): Fragment {
         return when (position) {
-             0 -> {
+            0 -> {
                 MyPDFs()
             }
             1 -> {
@@ -18,10 +18,14 @@ internal class MyAdapter (var context:Context,fm:FragmentManager,var totalTabs:I
 
             }
 
-        else-> getItem(position)
+            else -> getItem(position)
+        }
     }
-    }
-    override fun getCount():Int {
+
+    override fun getCount(): Int {
         return totalTabs
     }
 }
+
+
+
