@@ -7,14 +7,30 @@
     >
 
 
-    <TextView
+<!--    <TextView-->
+<!--        android:id="@+id/Heading"-->
+<!--        android:layout_width="150dp"-->
+<!--        android:layout_height="81dp"-->
+<!--        android:layout_marginTop="250dp"-->
+<!--        android:layout_marginBottom="30dp"-->
+<!--        android:text="LOGIN TO CONTINUE"-->
+<!--        android:textStyle="bold"-->
+<!--        android:textAlignment="center"-->
+<!--        android:textAppearance="@style/TextAppearance.AppCompat.Large"-->
+<!--        app:layout_constraintBottom_toTopOf="@+id/UserName"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        app:layout_constraintHorizontal_bias="0.498"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintTop_toTopOf="parent"-->
+<!--        app:layout_constraintVertical_bias="0.0" />-->
+    <pl.droidsonroids.gif.GifImageView
         android:id="@+id/Heading"
         android:layout_width="150dp"
         android:layout_height="81dp"
         android:layout_marginTop="250dp"
         android:layout_marginBottom="30dp"
-        android:text="LOGIN TO CONTINUE"
-        android:textStyle="bold"
+        android:src="@drawable/ll"
+
         android:textAlignment="center"
         android:textAppearance="@style/TextAppearance.AppCompat.Large"
         app:layout_constraintBottom_toTopOf="@+id/UserName"
@@ -22,7 +38,7 @@
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintVertical_bias="0.0"/>
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/passwordLayout"
@@ -117,4 +133,7 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.0"
         app:srcCompat="@drawable/imga" />
+
+
+
 </androidx.constraintlayout.widget.ConstraintLayout>

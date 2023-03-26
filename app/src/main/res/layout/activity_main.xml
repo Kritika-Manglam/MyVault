@@ -37,30 +37,43 @@
         app:layout_constraintStart_toStartOf="parent"
         android:fontFamily="casual" />
 
-    <TextView
-        android:id="@+id/myvault"
-        android:layout_width="231dp"
-        android:layout_height="76dp"
-        android:text="MY VAULT"
-        android:textAlignment="center"
-        android:textAppearance="@style/TextAppearance.AppCompat.Large"
-        android:textSize="40sp"
-        app:layout_constraintBottom_toTopOf="@+id/description"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.885"
-        android:textStyle="bold"/>
+<!--    <TextView-->
+<!--        android:id="@+id/myvault"-->
+<!--        android:layout_width="231dp"-->
+<!--        android:layout_height="76dp"-->
+<!--        android:text="MY VAULT"-->
+<!--        android:textAlignment="center"-->
+<!--        android:textAppearance="@style/TextAppearance.AppCompat.Large"-->
+<!--        android:textSize="40sp"-->
+<!--        app:layout_constraintBottom_toTopOf="@+id/description"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintTop_toTopOf="parent"-->
+<!--        app:layout_constraintVertical_bias="0.885"-->
+<!--        android:textStyle="bold"/>-->
 
     <ImageView
         android:id="@+id/imageView8"
         android:layout_width="255dp"
         android:layout_height="476dp"
-        android:layout_marginBottom="204dp"
+        android:layout_marginBottom="244dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:srcCompat="@drawable/ghi" />
+
+    <pl.droidsonroids.gif.GifImageView
+        android:id="@+id/gifImageView"
+        android:layout_width="287dp"
+        android:layout_height="107dp"
+        android:background="#fff"
+        android:src="@drawable/result"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.451"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.687" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

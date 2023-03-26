@@ -8,6 +8,22 @@
     android:background="@drawable/wrs">
 
 
+    <!--    <Button-->
+<!--        android:id="@+id/button2"-->
+<!--        android:layout_width="232dp"-->
+<!--        android:layout_height="70dp"-->
+<!--        android:layout_marginTop="40dp"-->
+<!--        android:background="@drawable/edittext_round_shape"-->
+
+<!--        android:shadowColor="@color/teal_200"-->
+<!--        android:text="Upload"-->
+<!--        app:layout_constraintBottom_toBottomOf="parent"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        app:layout_constraintHorizontal_bias="0.497"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintTop_toBottomOf="@+id/imageView12"-->
+<!--        app:layout_constraintVertical_bias="0.0" />-->
+
     <ImageView
         android:id="@+id/imageView12"
         android:layout_width="wrap_content"
@@ -17,24 +33,8 @@
         app:layout_constraintHorizontal_bias="0.495"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.414"
+        app:layout_constraintVertical_bias="0.659"
         app:srcCompat="@drawable/abc" />
-
-    <Button
-        android:id="@+id/button2"
-        android:layout_width="232dp"
-        android:layout_height="70dp"
-        android:layout_marginTop="40dp"
-        android:background="@drawable/edittext_round_shape"
-
-        android:shadowColor="@color/teal_200"
-        android:text="Upload"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView12"
-        app:layout_constraintVertical_bias="0.0" />
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/TxtLayout"
@@ -86,14 +86,14 @@
         android:layout_height="70dp"
         android:layout_marginTop="40dp"
         android:background="@drawable/edittext_round_shape"
-        android:shadowColor="@color/teal_200"
-        android:text="save"
         android:onClick="Insert_Data"
+        android:shadowColor="@color/teal_200"
+        android:text="UPLOAD"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button2"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.918" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -31,34 +31,34 @@ class ImageUpload : AppCompatActivity() {
                 imageLauncher.launch(it)
             }
         }
-        binding.button2.setOnClickListener {
-            uploadImageTostorage("1")
-            //realtime database
-
-            //
-
-
-        }
         binding.buttong.setOnClickListener {
-            val imgName = binding.Txt1.text.toString()
-            val url=imageReference.downloadUrl
+            uploadImageTostorage("1")
+
+                val imgName = binding.Txt1.text.toString()
+
+
+                database = FirebaseDatabase.getInstance().getReference("IMAGES")
+
+                val Img = itemDs(imgName)
+                
+                database.child(imgName).setValue(Img).addOnSuccessListener {
+                    binding.Txt1.text.clear()
+                    Toast.makeText(this, "Successfully saved", Toast.LENGTH_SHORT).show()
+
+                }.addOnFailureListener {
+                    Toast.makeText(this, "Failed", Toast.LENGTH_SHORT).show()
+                }
 
 
 
-            database = FirebaseDatabase.getInstance().getReference("IMAGES")
 
-            val Img = itemDs(imgName)
-            database.setValue(url)
-            database.child(imgName).setValue(Img).addOnSuccessListener {
-                binding.Txt1.text.clear()
-                Toast.makeText(this, "Successfully saved", Toast.LENGTH_SHORT).show()
 
-            }.addOnFailureListener {
-                Toast.makeText(this, "Failed", Toast.LENGTH_SHORT).show()
-            }
-        }
 
     }
+
+        }
+
+
 
     private val imageLauncher =
         registerForActivityResult(ActivityResultContracts.StartActivityForResult()) { result ->
@@ -80,7 +80,13 @@ class ImageUpload : AppCompatActivity() {
                 //pathstring is where we want to upload the file
 
 
+
                 imageReference.child("Images/$filename").putFile(it).addOnSuccessListener {
+                    imageReference.child("Images/$filename").downloadUrl.addOnSuccessListener {
+                        database = FirebaseDatabase.getInstance().getReference("IMAGES")
+                        val key=System.currentTimeMillis().toString()
+                        database.child("ImgURL").setValue(it.toString())
+                    }
                     Toast.makeText(this, "Success upload", Toast.LENGTH_SHORT).show()
                 }.addOnFailureListener {
                     Toast.makeText(this, "Error On Upload", Toast.LENGTH_SHORT).show()

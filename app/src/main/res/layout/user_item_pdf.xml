@@ -42,7 +42,7 @@
 
         </LinearLayout>
 
-       <!--<LinearLayout
+       <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center_vertical"
@@ -61,11 +61,11 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="8dp"
-                android:text=".jpg"
+                android:text=".pdf"
                 android:textColor="@color/black"
                 android:textSize="20sp" />
 
-        </LinearLayout> -->
+        </LinearLayout>
 
         <LinearLayout
             android:layout_width="wrap_content"
@@ -87,6 +87,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="8dp"
                 android:text="https:/...."
+               android:onClick="pdfviews"
                 android:textColor="@color/black"
                 android:textSize="20sp" />
 

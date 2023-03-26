@@ -64,11 +64,16 @@ class pdfUpload : AppCompatActivity() {
     private fun uploadImageTostorage(filename: String) {
         try {
             currentFile?.let {
-                //this line of code will be used to upload the file
+                //to upload the file
                 //pathstring is where we want to upload the file
-                //in our case images
-                //nut before that lets create that images path on our
+
+
                 pdfReference.child("pdf/$filename").putFile(it).addOnSuccessListener {
+                    pdfReference.child("pdf/$filename").downloadUrl.addOnSuccessListener {
+                        database = FirebaseDatabase.getInstance().getReference("pdfItem")
+                        val key=System.currentTimeMillis().toString()
+                        database.child("pdfURL").setValue(it.toString())
+                    }
                     Toast.makeText(this,"Success upload", Toast.LENGTH_SHORT).show()
                 }.addOnFailureListener{
                     Toast.makeText(this,"Error On Upload", Toast.LENGTH_SHORT).show()

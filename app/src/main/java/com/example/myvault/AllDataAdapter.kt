@@ -7,7 +7,7 @@ import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 
-class AllDataAdapter(private val newsList : ArrayList<itemDs>) : RecyclerView.Adapter<AllDataAdapter.MyViewHolder>() {
+class AllDataAdapter(private val MyImages : ArrayList<itemDs>) : RecyclerView.Adapter<AllDataAdapter.MyViewHolder>() {
 
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MyViewHolder {
@@ -20,24 +20,24 @@ class AllDataAdapter(private val newsList : ArrayList<itemDs>) : RecyclerView.Ad
 
     override fun onBindViewHolder(holder: MyViewHolder, position: Int) {
 
-        val currentItem = newsList[position]
+        val currentItem = MyImages[position]
 
         holder.firstName.text = currentItem.imgName
-       // holder.lastName.text = currentItem.fileExtension
+        holder.lastName.text = currentItem.fileExtension
        // holder.age.text = currentItem.age
 
     }
 
     override fun getItemCount(): Int {
 
-        return newsList.size
+        return MyImages.size
     }
 
 
     class MyViewHolder(itemView : View) : RecyclerView.ViewHolder(itemView){
 
         val firstName : TextView = itemView.findViewById(R.id.tvfirstName)
-      //  val lastName : TextView = itemView.findViewById(R.id.tvlastName)
+        val lastName : TextView = itemView.findViewById(R.id.tvlastName)
       //  val age : TextView = itemView.findViewById(R.id.tvage)
 
     }

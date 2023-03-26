@@ -5,11 +5,13 @@ import android.widget.ImageView
 import androidx.appcompat.app.AppCompatActivity
 import com.bumptech.glide.Glide
 import com.example.myvault.databinding.ActivityViewImageBinding
+import com.google.firebase.ktx.Firebase
+import com.google.firebase.storage.ktx.storage
 
 
 class ViewImageActivity : AppCompatActivity() {
     private lateinit var binding:ActivityViewImageBinding
-
+    private var imageReference = Firebase.storage.reference
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityViewImageBinding.inflate(layoutInflater)
@@ -18,17 +20,10 @@ class ViewImageActivity : AppCompatActivity() {
           // finding img view
         val imageView : ImageView=findViewById(R.id.imageView11)
         // setting url
-        val url ="gs://my-vault-8e11d.appspot.com/Images"
-       // val url="https://picsum.photos/300"
-        Glide.with(this).load(url).into(binding.imageView11)
+        val imgurl=imageReference.child("Images").downloadUrl
+        //val url ="gs://my-vault-8e11d.appspot.com/Images"
+       //val url="https://picsum.photos/300"
+        Glide.with(this).load(imgurl).into(binding.imageView11)
 
-   // ImageView imageView = (ImageView) findViewById(R.id.imageView);
 
-   // Glide.with(context)
-
-    //.load("YOUR IMAGE URL HERE")
-
-    //.into(imageView)
-
-    //.error(R.drawable.imagenotfound);
 }}
