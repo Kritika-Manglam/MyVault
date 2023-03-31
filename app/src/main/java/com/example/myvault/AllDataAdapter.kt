@@ -39,8 +39,8 @@ class AllDataAdapter(private val MyImages : ArrayList<itemDs>) : RecyclerView.Ad
 
 //        holder.itemView.setOnClickListener {
 //
-//            val intent= Intent(this, ViewImageActivity::class.java)
-//            intent.putExtra("ImgNAME",MyImages[position].imgName)
+//            val intent= Intent(this@AllDataAdapter, ViewImageActivity::class.java)
+//            intent.putExtra("ImgNAME",MyImages[position])
 //            startActivity(intent)
 //        }
 
