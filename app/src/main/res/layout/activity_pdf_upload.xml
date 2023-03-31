@@ -4,104 +4,106 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/wrs"
+    android:background="@color/purple_200"
     tools:context=".pdfUpload">
 
 
-    <ImageView
-        android:id="@+id/pdfView"
-        android:layout_width="280dp"
-        android:layout_height="334dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.671"
-        app:srcCompat="@drawable/def" />
-
-    <Button
-        android:id="@+id/btn"
-        android:layout_width="265dp"
-        android:layout_height="57dp"
-        android:layout_marginTop="40dp"
-        android:background="@drawable/edittext_round_shape"
-
-        android:shadowColor="@color/teal_200"
-        android:text="Upload"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.52"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/pdfView"
-        app:layout_constraintVertical_bias="0.047" />
-
-
-
-    <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/TxtLayout2"
-        android:layout_width="367dp"
-        android:layout_height="65dp"
-        android:layout_marginHorizontal="16dp"
-        android:layout_marginTop="116dp"
-        android:baselineAligned="true"
-        app:boxStrokeColor="@color/teal_200"
-        app:hintTextColor="@color/teal_200"
-        app:layout_constraintBottom_toBottomOf="@+id/btno"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.25"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.312">
-
-        <EditText
-            android:id="@+id/Txt2"
-            android:layout_width="376dp"
-            android:layout_height="67dp"
-
-            android:ems="10"
-            android:inputType="textPersonName"
-            android:text="Name of PDF" />
-    </com.google.android.material.textfield.TextInputLayout>
-
     <TextView
         android:id="@+id/tView"
-        android:layout_width="397dp"
+        android:layout_width="339dp"
         android:layout_height="57dp"
         android:text="UPLOAD YOUR PDF"
+        android:fontFamily="casual"
         android:textAlignment="center"
         android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        android:textSize="30sp"
         android:textStyle="bold|italic"
-        app:layout_constraintBottom_toTopOf="@+id/TxtLayout2"
+        app:layout_constraintBottom_toTopOf="@+id/guideline"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.059" />
+        app:layout_constraintTop_toTopOf="parent" />
 
-    <TextView
-        android:id="@+id/textView3"
-        android:layout_width="182dp"
-        android:layout_height="20dp"
-        android:text="Click on the icon to upload"
-        app:layout_constraintBottom_toTopOf="@+id/pdfView"
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent=".15" />
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/cardView2"
+        style="@style/custom_card_view_style"
+        android:layout_width="434dp"
+        android:layout_height="751dp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/tView"
-        app:layout_constraintVertical_bias="0.797" />
+        app:layout_constraintTop_toTopOf="@+id/guideline"
+        app:layout_constraintVertical_bias="0.0">
 
-    <!--    <pl.droidsonroids.gif.GifImageView-->
-<!--        android:id="@+id/gifImageView"-->
-<!--        android:layout_width="362dp"-->
-<!--        android:layout_height="210dp"-->
-<!--        android:background="#fff"-->
-<!--        android:src="@drawable/and"-->
-<!--        app:layout_constraintBottom_toBottomOf="parent"-->
-<!--        app:layout_constraintEnd_toEndOf="parent"-->
-<!--        app:layout_constraintHorizontal_bias="0.489"-->
-<!--        app:layout_constraintStart_toStartOf="parent"-->
-<!--        app:layout_constraintTop_toTopOf="parent"-->
-<!--        app:layout_constraintVertical_bias="0.286" />-->
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
 
+            <TextView
+                android:id="@+id/textView3"
+                android:layout_width="294dp"
+                android:layout_height="25dp"
+                android:text="Click on the icon to upload"
+                app:layout_constraintBottom_toTopOf="@+id/pdfView"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/TxtLayout2"
+                android:textStyle="italic"
+                android:textAlignment="center"/>
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+            <ImageView
+                android:id="@+id/pdfView"
+                android:layout_width="262dp"
+                android:layout_height="293dp"
+                android:layout_marginBottom="180dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:srcCompat="@drawable/def" />
+
+            <Button
+                android:id="@+id/btn"
+                android:layout_width="265dp"
+                android:layout_height="57dp"
+                android:background="@drawable/edittext_round_shape"
+                android:shadowColor="@color/purple_200"
+                android:text="Upload"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.51"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.851" />
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/TxtLayout2"
+                android:layout_width="367dp"
+                android:layout_height="65dp"
+                android:layout_marginHorizontal="16dp"
+                android:layout_marginBottom="500dp"
+                android:baselineAligned="true"
+                app:boxStrokeColor="@color/purple_200"
+                app:hintTextColor="@color/purple_200"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <EditText
+                    android:id="@+id/Txt2"
+                    android:layout_width="376dp"
+                    android:layout_height="67dp"
+                    android:ems="10"
+                    android:inputType="textPersonName"
+                    android:hint="Name of PDF" />
+            </com.google.android.material.textfield.TextInputLayout>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </com.google.android.material.card.MaterialCardView>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>

@@ -18,6 +18,7 @@ class pdfUpload : AppCompatActivity() {
     private var pdfReference = Firebase.storage.reference
     private var currentFile: Uri? = null
     private lateinit var database: DatabaseReference
+    val key=System.currentTimeMillis().toString()
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         //set view binding
@@ -38,7 +39,7 @@ class pdfUpload : AppCompatActivity() {
             val pdfName=binding.Txt2.text.toString()
             database=FirebaseDatabase.getInstance().getReference("pdfItem")
             val user=pdfItem(pdfName)
-            database.child(pdfName).setValue(user).addOnSuccessListener {
+            database.child(key).setValue(user).addOnSuccessListener {
                 binding.Txt2.text.clear()
                 Toast.makeText(this,"Successfully loaded",Toast.LENGTH_SHORT).show()
             }.addOnFailureListener {
@@ -71,8 +72,8 @@ class pdfUpload : AppCompatActivity() {
                 pdfReference.child("pdf/$filename").putFile(it).addOnSuccessListener {
                     pdfReference.child("pdf/$filename").downloadUrl.addOnSuccessListener {
                         database = FirebaseDatabase.getInstance().getReference("pdfItem")
-                        val key=System.currentTimeMillis().toString()
-                        database.child("pdfURL").setValue(it.toString())
+                        //val key=System.currentTimeMillis().toString()
+                        database.child(key).child("pdfURL").setValue(it.toString())
                     }
                     Toast.makeText(this,"Success upload", Toast.LENGTH_SHORT).show()
                 }.addOnFailureListener{
@@ -87,64 +88,8 @@ class pdfUpload : AppCompatActivity() {
         }
 
 
-    }
+    }}
 
 
 
 
-
-}
-// lateinit var binding: ActivityPdfUploadBinding
-// lateinit var PdfUri : Uri
-// override fun onCreate(savedInstanceState: Bundle?) {
-// super.onCreate(savedInstanceState)
-// binding= ActivityPdfUploadBinding.inflate(layoutInflater)
-// setContentView(binding.root)
-// binding.selectPdf.setOnClickListener{
-// selectPdf()
-// }
-// binding.btn.setOnClickListener{
-// uploadPdf()
-// }
-// }
-//
-// private fun uploadPdf() {
-// val progressDialog=ProgressDialog(this)
-// progressDialog.setMessage("Uploading file")
-// progressDialog.setCancelable(false)
-// progressDialog.show()
-// val formatter=SimpleDateFormat("yyyy_MM_dd_HH_mm_ss",Locale.getDefault())
-// val now= Date()
-// val fileName=formatter.format(now)
-// val storageReference=FirebaseStorage.getInstance().getReference("pdf/$fileName")
-// storageReference.putFile(PdfUri).addOnSuccessListener {
-// //binding.firebasePdf.setPdfURI(null)
-// //  Toast.makeText(this@StorageActivity,"Success", Toast.LENGTH_SHORT).show()
-// if(progressDialog.isShowing)progressDialog.dismiss()
-// }.addOnFailureListener{
-// if(progressDialog.isShowing)progressDialog.dismiss()
-// //  Toast.makeText(this@StorageAActivity,"Failed",Toast.LENGTH_SHORT).show()
-// }
-// }
-//
-// private fun selectPdf() {
-//
-// val intent=Intent()
-// intent.type="pdf/*"
-// intent.action= Intent.ACTION_GET_CONTENT
-// startActivityForResult(intent,100)
-//
-// }
-//
-// override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
-// super.onActivityResult(requestCode, resultCode, data)
-// if(requestCode==100&&resultCode== RESULT_OK){
-// PdfUri=data?.data!!
-// //binding.firebasePdf.setPdfURI(PdfUri)
-// }
-// }
-// }
-//
-//
-//
-// }*

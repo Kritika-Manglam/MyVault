@@ -5,7 +5,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".ImageUpload"
-    android:background="@drawable/wrs">
+    android:background="@color/purple_200"
+    >
 
 
     <!--    <Button-->
@@ -24,76 +25,174 @@
 <!--        app:layout_constraintTop_toBottomOf="@+id/imageView12"-->
 <!--        app:layout_constraintVertical_bias="0.0" />-->
 
-    <ImageView
-        android:id="@+id/imageView12"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.495"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.659"
-        app:srcCompat="@drawable/abc" />
+<!--    <ImageView-->
+<!--        android:id="@+id/imageView12"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        app:layout_constraintBottom_toBottomOf="parent"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        app:layout_constraintHorizontal_bias="0.495"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintTop_toTopOf="parent"-->
+<!--        app:layout_constraintVertical_bias="0.659"-->
+<!--        app:srcCompat="@drawable/abc" />-->
 
-    <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/TxtLayout"
-        android:layout_width="345dp"
-        android:layout_height="66dp"
-        android:layout_marginHorizontal="16dp"
-        android:layout_marginTop="116dp"
-        app:boxStrokeColor="@color/teal_200"
-        app:hintTextColor="@color/teal_200"
-        app:layout_constraintBottom_toTopOf="@+id/imageView12"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.432"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView12"
-        app:layout_constraintTop_toTopOf="parent">
+<!--    <com.google.android.material.textfield.TextInputLayout-->
+<!--        android:id="@+id/TxtLayout"-->
+<!--        android:layout_width="345dp"-->
+<!--        android:layout_height="66dp"-->
+<!--        android:layout_marginHorizontal="16dp"-->
+<!--        android:layout_marginTop="116dp"-->
+<!--        app:boxStrokeColor="@color/teal_200"-->
+<!--        app:hintTextColor="@color/teal_200"-->
+<!--        -->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        app:layout_constraintHorizontal_bias="0.432"-->
+<!--        -->
+<!--        -->
+<!--        app:layout_constraintTop_toTopOf="parent">-->
 
-        <EditText
-            android:id="@+id/Txt1"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:ems="10"
-            android:inputType="textPersonName"
-            android:text="Name of image"
-            app:layout_constraintBottom_toTopOf="@+id/imageView12"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-    </com.google.android.material.textfield.TextInputLayout>
+<!--        <EditText-->
+<!--            android:id="@+id/Txt1"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="match_parent"-->
+<!--            android:ems="10"-->
+<!--            android:inputType="textPersonName"-->
+<!--            android:text="Name of image"-->
+<!--            -->
+<!--            -->
+<!--             />-->
+<!--    </com.google.android.material.textfield.TextInputLayout>-->
 
 
     <TextView
         android:id="@+id/textView2"
-        android:layout_width="357dp"
-        android:layout_height="80dp"
+        android:layout_width="323dp"
+        android:layout_height="84dp"
+        android:layout_marginTop="28dp"
+        android:fontFamily="casual"
         android:text="UPLOAD YOUR IMAGE"
         android:textAlignment="center"
         android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        android:textSize="30sp"
         android:textStyle="bold|italic"
         app:layout_constraintBottom_toTopOf="@+id/TxtLayout"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.827"
+        app:layout_constraintHorizontal_bias="0.42"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.487" />
 
-    <Button
-        android:id="@+id/buttong"
-        android:layout_width="232dp"
-        android:layout_height="70dp"
-        android:layout_marginTop="40dp"
-        android:background="@drawable/edittext_round_shape"
-        android:onClick="Insert_Data"
-        android:shadowColor="@color/teal_200"
-        android:text="UPLOAD"
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent=".15" />
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/cardView2"
+        style="@style/custom_card_view_style"
+        android:layout_width="434dp"
+        android:layout_height="751dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.918" />
+        app:layout_constraintTop_toTopOf="@+id/guideline"
+        app:layout_constraintVertical_bias="0.0">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+<!--            <EditText-->
+<!--&lt;!&ndash;                android:id="@+id/Txt1"&ndash;&gt;-->
+<!--                android:layout_width="343dp"-->
+<!--                android:layout_height="78dp"-->
+<!--                android:layout_marginTop="32dp"-->
+<!--                android:ems="10"-->
+<!--                android:inputType="textPersonName"-->
+<!--                android:text="Name of image"-->
+<!--                app:layout_constraintEnd_toEndOf="parent"-->
+<!--                app:layout_constraintStart_toStartOf="parent"-->
+<!--                app:layout_constraintTop_toTopOf="parent" />-->
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintBottom_toBottomOf="@+id/Txt1"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/Txt1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Name of Image"
+                    android:inputType="textPersonName"
+                     />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <ImageView
+                android:id="@+id/imageView12"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.47"
+                app:srcCompat="@drawable/abc" />
+
+            <TextView
+                android:id="@+id/textView6"
+                android:layout_width="218dp"
+                android:layout_height="33dp"
+                android:layout_marginTop="160dp"
+                android:text="click on the image to upload"
+                android:textAlignment="center"
+                android:textStyle="italic"
+                app:layout_constraintBottom_toTopOf="@+id/imageView12"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <Button
+                android:id="@+id/buttong"
+                android:layout_width="232dp"
+                android:layout_height="70dp"
+                android:background="@drawable/edittext_round_shape"
+                android:onClick="Insert_Data"
+                android:shadowColor="@color/purple_200"
+                android:text="UPLOAD"
+                app:backgroundTint="@color/purple_500"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.459"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.822" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </com.google.android.material.card.MaterialCardView>
+
+<!--    <com.google.android.material.floatingactionbutton.FloatingActionButton-->
+<!--        android:id="@+id/floatingActionButton"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_marginStart="16dp"-->
+<!--        android:layout_marginTop="36dp"-->
+<!--        android:clickable="true"-->
+<!--        -->
+<!--        app:backgroundTint="@color/white"-->
+<!--        app:layout_constraintBottom_toTopOf="@+id/guideline"-->
+<!--        app:layout_constraintEnd_toStartOf="@+id/textView2"-->
+<!--        app:layout_constraintHorizontal_bias="0.0"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintTop_toTopOf="parent"-->
+<!--        app:layout_constraintVertical_bias="0.238"-->
+<!--        app:srcCompat="@drawable/baseline_arrow_back_ios_new_24" />-->
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

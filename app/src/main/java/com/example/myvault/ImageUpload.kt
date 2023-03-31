@@ -17,6 +17,7 @@ class ImageUpload : AppCompatActivity() {
     private var imageReference = Firebase.storage.reference
     private var currentFile: Uri? = null
     private lateinit var database: DatabaseReference
+    val key=System.currentTimeMillis().toString()
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         //set view binding
@@ -38,11 +39,11 @@ class ImageUpload : AppCompatActivity() {
 
 
                 database = FirebaseDatabase.getInstance().getReference("IMAGES")
-
+               // val key=System.currentTimeMillis().toString()
                 val Img = itemDs(imgName)
                 
-                database.child(imgName).setValue(Img).addOnSuccessListener {
-                    binding.Txt1.text.clear()
+                database.child(key).setValue(Img).addOnSuccessListener {
+                    binding.Txt1
                     Toast.makeText(this, "Successfully saved", Toast.LENGTH_SHORT).show()
 
                 }.addOnFailureListener {
@@ -84,8 +85,8 @@ class ImageUpload : AppCompatActivity() {
                 imageReference.child("Images/$filename").putFile(it).addOnSuccessListener {
                     imageReference.child("Images/$filename").downloadUrl.addOnSuccessListener {
                         database = FirebaseDatabase.getInstance().getReference("IMAGES")
-                        val key=System.currentTimeMillis().toString()
-                        database.child("ImgURL").setValue(it.toString())
+                       // val key=System.currentTimeMillis().toString()
+                        database.child(key).child("ImgURL").setValue(it.toString())
                     }
                     Toast.makeText(this, "Success upload", Toast.LENGTH_SHORT).show()
                 }.addOnFailureListener {

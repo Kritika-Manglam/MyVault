@@ -4,7 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Fragments.MyPDFs">
+    tools:context=".Fragments.MyPDFs"
+    android:background="@drawable/njkkjk">
 
 
     <TextView
@@ -20,18 +21,18 @@
         android:id="@+id/a2"
         android:layout_width="80dp"
         android:layout_height="wrap_content"
-        android:clickable="true"
-        android:focusable="true"
         android:layout_gravity="end|bottom"
+        android:clickable="true"
         android:contentDescription="UploadPDF"
+        android:focusable="true"
         android:src="@android:drawable/ic_input_add"
-        />
+        app:backgroundTint="@color/purple_200" />
 
-    <ImageView
-        android:id="@+id/imageView11"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:src="@drawable/shape" />
+<!--    <ImageView-->
+<!--        android:id="@+id/imageView11"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:src="@drawable/shape" />-->
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/userList"

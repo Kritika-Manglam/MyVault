@@ -5,37 +5,39 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MainActivity"
-    android:background="@drawable/xyz">
+    android:background="@drawable/nop">
 
     <Button
         android:id="@+id/startbutton"
-        android:backgroundTint="@color/teal_200"
-        android:text="Start"
         android:layout_width="297dp"
         android:layout_height="55dp"
         android:layout_marginBottom="60dp"
+        android:background="@drawable/edittext_round_shape"
+        android:backgroundTint="@color/purple_200"
+        android:onClick="appBegins"
+        android:text="Start"
+        android:textColorLink="@color/purple_200"
+        app:backgroundTint="@color/purple_500"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.544"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageView8"
-        app:layout_constraintVertical_bias="1.0"
-        android:onClick="appBegins"
-        android:background="@drawable/edittext_round_shape"/>
+        app:layout_constraintVertical_bias="1.0" />
 
     <TextView
         android:id="@+id/description"
-        android:layout_width="275dp"
-        android:layout_height="47dp"
+        android:layout_width="306dp"
+        android:layout_height="70dp"
         android:layout_marginBottom="36dp"
+        android:fontFamily="casual"
         android:text="The Pdf and Image Store"
         android:textAlignment="center"
         android:textAppearance="@style/TextAppearance.AppCompat.Body1"
-        android:textSize="20sp"
+        android:textSize="25sp"
         app:layout_constraintBottom_toTopOf="@+id/startbutton"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        android:fontFamily="casual" />
+        app:layout_constraintStart_toStartOf="parent" />
 
 <!--    <TextView-->
 <!--        android:id="@+id/myvault"-->
@@ -56,24 +58,24 @@
         android:id="@+id/imageView8"
         android:layout_width="255dp"
         android:layout_height="476dp"
-        android:layout_marginBottom="244dp"
+        android:layout_marginBottom="308dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:srcCompat="@drawable/ghi" />
 
     <pl.droidsonroids.gif.GifImageView
-        android:id="@+id/gifImageView"
-        android:layout_width="287dp"
-        android:layout_height="107dp"
+        android:id="@+id/giff"
+        android:layout_width="358dp"
+        android:layout_height="115dp"
         android:background="#fff"
         android:src="@drawable/result"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.451"
+        app:layout_constraintHorizontal_bias="0.49"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.687" />
+        app:layout_constraintVertical_bias="0.612" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

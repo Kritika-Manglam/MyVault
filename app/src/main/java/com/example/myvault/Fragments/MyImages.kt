@@ -57,7 +57,8 @@ class MyImages : Fragment() {
                     for(userSnapshot in snapshot.children){
                         val name=userSnapshot.child("imgName").value.toString()
                         val ext=userSnapshot.child("fileExtension").value.toString()
-                        newsArrayList.add(itemDs(name,ext))
+                        val imgurl=userSnapshot.child("ImgURL").value.toString()
+                        newsArrayList.add(itemDs(name,ext,imgurl))
 
                     }
                     userRecyclerview.adapter=AllDataAdapter(newsArrayList)

@@ -4,16 +4,17 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Fragments.MyImages">
+    tools:context=".Fragments.MyImages"
+    android:background="@drawable/njkkjk">
 
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/my_images"
-        android:gravity="center"
-        android:textSize="30sp"
-        android:textStyle="bold"
-        android:textColor="@color/black"/>
+<!--    <TextView-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="match_parent"-->
+<!--        android:text="@string/my_images"-->
+<!--        android:gravity="center"-->
+<!--        android:textSize="30sp"-->
+<!--        android:textStyle="bold"-->
+<!--        android:textColor="@color/black"/>-->
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/a1"
@@ -21,16 +22,17 @@
         android:layout_height="wrap_content"
         android:layout_gravity="end|bottom"
         android:clickable="true"
-        android:src="@android:drawable/ic_input_add"
+        android:contentDescription="UploadImage"
         android:focusable="true"
 
-        android:contentDescription="UploadImage"/>
+        android:src="@android:drawable/ic_input_add"
+        app:backgroundTint="@color/purple_200" />
 
-    <ImageView
-        android:id="@+id/imageView10"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:src="@drawable/shape" />
+<!--    <ImageView-->
+<!--        android:id="@+id/imageView10"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:src="@drawable/shape" />-->
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recycler_view"

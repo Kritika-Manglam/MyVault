@@ -22,6 +22,7 @@ class MyPDFs : Fragment() {
     private lateinit var dbref:DatabaseReference
     private lateinit var userRecyclerview: RecyclerView
     private lateinit var userArrayList: ArrayList<pdfItem>
+    val key=System.currentTimeMillis().toString()
     //private lateinit var adapter : AllDataAdapter
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -50,7 +51,7 @@ class MyPDFs : Fragment() {
     }
 
     private fun getUserData() {
-        dbref= FirebaseDatabase.getInstance().getReference("IMAGES")
+        dbref= FirebaseDatabase.getInstance().getReference("pdfItem")
         dbref.addValueEventListener(object: ValueEventListener {
             override fun onDataChange(snapshot: DataSnapshot) {
                 if(snapshot.exists()){
@@ -58,7 +59,7 @@ class MyPDFs : Fragment() {
                         val name=userSnapshot.child("pdfName").value.toString()
                         val ext=userSnapshot.child("pdfExtension").value.toString()
                         val pdfurl=userSnapshot.child("pdfURL").value.toString()
-                        userArrayList.add(pdfItem(name,ext))
+                        userArrayList.add(pdfItem(name,pdfurl,ext))
 
                     }
                     userRecyclerview.adapter= adapterpdf(userArrayList)
