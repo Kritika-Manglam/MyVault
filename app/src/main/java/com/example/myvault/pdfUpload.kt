@@ -72,7 +72,7 @@ class pdfUpload : AppCompatActivity() {
                 pdfReference.child("pdf/$filename").putFile(it).addOnSuccessListener {
                     pdfReference.child("pdf/$filename").downloadUrl.addOnSuccessListener {
                         database = FirebaseDatabase.getInstance().getReference("pdfItem")
-                        //val key=System.currentTimeMillis().toString()
+
                         database.child(key).child("pdfURL").setValue(it.toString())
                     }
                     Toast.makeText(this,"Success upload", Toast.LENGTH_SHORT).show()

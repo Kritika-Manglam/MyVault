@@ -8,13 +8,13 @@
 
     <ImageView
         android:id="@+id/imageView11"
-        android:layout_width="397dp"
-        android:layout_height="720dp"
+        android:layout_width="415dp"
+        android:layout_height="875dp"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.492"
+        app:layout_constraintHorizontal_bias="0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 

@@ -18,7 +18,7 @@ class SecondPage : AppCompatActivity() {
 
         tabLayout.addTab(tabLayout.newTab().setText("My PDFs"))
         tabLayout.addTab(tabLayout.newTab().setText("My Images"))
-        //tabLayout.tabGravity = TableLayout.GRAVITY_FILL
+
 
         val adapter=MyAdapter(this,supportFragmentManager,tabLayout.tabCount)
         viewPager.adapter=adapter

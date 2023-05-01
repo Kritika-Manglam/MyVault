@@ -35,7 +35,7 @@ class LoginPageActivity : AppCompatActivity() {
                         val intent = Intent(this, SecondPage::class.java)
                         startActivity(intent)
                     } else {
-                        Toast.makeText(this, "Create an account to continue", Toast.LENGTH_SHORT).show()
+                        Toast.makeText(this, "Username or Password is invalid!!", Toast.LENGTH_SHORT).show()
 
                     }
                 }
@@ -46,11 +46,3 @@ class LoginPageActivity : AppCompatActivity() {
         }
     }}
 
-// override fun onStart() {
-// super.onStart()
-//
-// if(firebaseAuth.currentUser != null){
-// val intent = Intent(this, SecondPage::class.java)
-// startActivity(intent)
-// }
-// }

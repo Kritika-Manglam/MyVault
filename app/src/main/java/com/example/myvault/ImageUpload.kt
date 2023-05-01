@@ -39,7 +39,7 @@ class ImageUpload : AppCompatActivity() {
 
 
                 database = FirebaseDatabase.getInstance().getReference("IMAGES")
-               // val key=System.currentTimeMillis().toString()
+
                 val Img = itemDs(imgName)
                 
                 database.child(key).setValue(Img).addOnSuccessListener {

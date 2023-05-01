@@ -1,6 +1,7 @@
 package com.example.myvault
 
 
+import android.content.Intent
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -37,12 +38,12 @@ class AllDataAdapter(private val MyImages : ArrayList<itemDs>) : RecyclerView.Ad
         val uri=currentItem.ImgURL
         Glide.with(holder.itemViews1.context).load(uri).into(holder.itemViews1)
 
-//        holder.itemView.setOnClickListener {
-//
-//            val intent= Intent(this@AllDataAdapter, ViewImageActivity::class.java)
-//            intent.putExtra("ImgNAME",MyImages[position])
-//            startActivity(intent)
-//        }
+        holder.age.setOnClickListener {
+
+            val intent= Intent(holder.age.context, ViewImageActivity::class.java)
+            intent.putExtra("Imgurl",currentItem.ImgURL)
+            holder.age.context.startActivity(intent)
+        }
 
     }
 

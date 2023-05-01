@@ -7,6 +7,7 @@ import androidx.appcompat.app.AppCompatActivity
 import com.google.firebase.database.DatabaseReference
 import com.google.firebase.ktx.Firebase
 import com.google.firebase.storage.ktx.storage
+import java.net.URLEncoder
 
 
 class ViewPdfActivity : AppCompatActivity() {
@@ -17,18 +18,26 @@ class ViewPdfActivity : AppCompatActivity() {
             super.onCreate(savedInstanceState)
             setContentView(R.layout.activity_view_pdf)
 
-            // Find the WebView by its unique ID
-            val webView = findViewById<WebView>(R.id.web)
-            val url=pdfReference.child("pdf").downloadUrl
-            // loading http://www.google.com url in the WebView.
-            webView.loadUrl("url")
 
-            // this will enable the javascript.
+            val webView = findViewById<WebView>(R.id.web)
+
+
+
+            val fileurl:String =  intent.getStringExtra("pdfURL").toString()
+
+
             webView.settings.javaScriptEnabled = true
 
-            // WebViewClient allows you to handle
-            // onPageFinished and override Url loading.
+
             webView.webViewClient = WebViewClient()
+
+
+
+                val url= URLEncoder.encode(fileurl,"UTF-8").toString()
+
+
+            webView.loadUrl("https://docs.google.com/gview?embedded=true&url="+url)
+           
         }
     }
 

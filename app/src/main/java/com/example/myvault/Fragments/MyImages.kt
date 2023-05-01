@@ -17,7 +17,7 @@ import com.google.firebase.database.*
 
 
 class MyImages : Fragment() {
-    //recycler
+
     private lateinit var adapter : AllDataAdapter
     private lateinit var dbref : DatabaseReference
     private lateinit var userRecyclerview: RecyclerView
@@ -30,7 +30,7 @@ class MyImages : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): android.view.View? {
-        // Inflate the layout for this fragment
+
         val binding = FragmentMyImagesBinding.inflate(inflater, container, false)
         binding.a1.setOnClickListener {
             startActivity(Intent(binding.root.context, ImageUpload::class.java))
@@ -73,7 +73,6 @@ class MyImages : Fragment() {
     }
 
 
-//    private fun dataInitialize() {
-//        newsArrayList = arrayListOf<itemDs>()
+
     }
 

@@ -16,7 +16,10 @@
 
         <activity
             android:name=".ViewImageActivity"
-            android:exported="false" />
+            android:exported="true" />
+        <activity
+            android:name=".ViewPdfActivity"
+            android:exported="true" />
         <activity
             android:name=".pdfUpload"
             android:exported="true" />
@@ -29,7 +32,7 @@
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.LAUNCHER" />
+<!--                <category android:name="android.intent.category.LAUNCHER" />-->
             </intent-filter>
         </activity>
         <activity
@@ -41,7 +44,7 @@
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.LAUNCHER" />
+<!--               <category android:name="android.intent.category.LAUNCHER" />-->
             </intent-filter>
         </activity>
         <activity
